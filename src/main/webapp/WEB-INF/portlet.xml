@@ -4,14 +4,14 @@
 <portlet>
 	<portlet-name>simpleportlet</portlet-name>
 	<display-name>simpleportlet</display-name>
-	<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
+	<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
 	<init-param>
-		<name>view-template</name>
-		<value>/view.jsp</value>
+		<name>contextConfigLocation</name>
+		<value>classpath:/portlets/contexts/simpleportlet.xml</value>
 	</init-param>
-	<expiration-cache>0</expiration-cache>
 	<supports>
 		<mime-type>text/html</mime-type>
+		<portlet-mode>view</portlet-mode>
 	</supports>
 	<portlet-info>
 		<title>simpleportlet</title>
