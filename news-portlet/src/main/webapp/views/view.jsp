@@ -10,3 +10,17 @@
 	<aui:input type="text" name="number" id="number"/><br/>
 	<button type="submit">Submit</button>
 </form>
+
+
+
+<portlet:actionURL var="submitSampleTra">
+	<portlet:param name="action" value="addTrash"></portlet:param>
+</portlet:actionURL>
+
+<form action="${submitSampleTra}" method="post">
+	<aui:input type="text" name="number" id="number"/><br/>
+	<button type="submit">Submit</button>
+</form>
+
+
+Count of categories is <%= renderRequest.getAttribute("categoriesCount") %>

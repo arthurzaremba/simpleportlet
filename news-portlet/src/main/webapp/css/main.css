@@ -1,0 +1,29 @@
+.ct_headers {
+    background-color: #E4E4E4;
+    width: 100%;
+}
+
+.ct_entity {
+    background-color: white;
+    border-radius: 3px;
+    margin: 0px 0px 0px 10px;
+    border: solid 1px black;
+}
+
+.ct_links {
+    width: 70%;
+}
+
+.ct_subcategories {
+    background-color: #E4E4E4;
+    width: 29%;
+}
+
+.ct_pagination {
+    background-color: #E4E4E4;
+    width: 100%;
+}
+
+.ct_content {
+    min-height: 30px;
+}

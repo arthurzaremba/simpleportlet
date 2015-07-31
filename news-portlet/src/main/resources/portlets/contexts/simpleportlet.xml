@@ -12,17 +12,10 @@
         ">
 
     <context:annotation-config />
+    <bean class="by.example.config.AppConfig"/>
+
+    <!--<bean id="sample" class="by.example.controllers.PortletController"></bean> -->
 
 
-    <bean id="sample" class="by.example.controllers.PortletController"></bean>
 
-    <bean id="portletModeHandlerMapping" class="org.springframework.web.portlet.handler.PortletModeHandlerMapping">
-        <property name="portletModeMap">
-            <map>
-                <entry key="view">
-                    <ref bean="sample" />
-                </entry>
-            </map>
-        </property>
-    </bean>
 </beans>
