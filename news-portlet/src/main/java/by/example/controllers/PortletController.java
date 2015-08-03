@@ -41,6 +41,7 @@ public class PortletController {
 
     @RenderMapping(params = "action=renderLinks")
     public String renderLinks(@RequestParam("categoryId") Long categoryId, RenderRequest request, RenderResponse response) {
+        System.out.println("Category id selected is " + categoryId);
         request.setAttribute("linksList", linkRepository.findByCategoryId(categoryId));
         request.setAttribute("selectedCategoryId", categoryId);
         request.setAttribute("categoriesList", categoryRepository.findAll());

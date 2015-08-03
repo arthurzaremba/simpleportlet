@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <portlet:defineObjects/>
 
@@ -9,13 +10,13 @@
 </portlet:renderURL>
 
 <portlet:renderURL var="showLinksUrl">
+    <portlet:param name="categoryId" value="cat_id"/>
     <portlet:param name="action" value="renderLinks"/>
-    <portlet:param name="categoryId" value=" "/>
 </portlet:renderURL>
 
 <portlet:renderURL var="addLinkUrl">
+    <portlet:param name="categoryId" value="cat_id"/>
     <portlet:param name="action" value="renderAddLink"/>
-    <portlet:param name="categoryId" value=" "/>
 </portlet:renderURL>
 
 <div class="ct_headers">
@@ -23,12 +24,12 @@
         <c:choose>
             <c:when test="${item.id == selectedCategoryId}">
                 <span class="ct_entity" style="background-color: lime">
-                    <a href="${showLinksUrl}${item.id}">${item.title}</a>
+                    <a href="${fn:replace(showLinksUrl, 'cat_id', item.id)}">${item.title}</a>
                 </span>
             </c:when>
             <c:otherwise>
                 <span class="ct_entity">
-                    <a href="${showLinksUrl}${item.id}">${item.title}</a>
+                    <a href="${fn:replace(showLinksUrl, 'cat_id', item.id)}">${item.title}</a>
                 </span>
             </c:otherwise>
         </c:choose>
@@ -45,7 +46,7 @@
                     <a>${item.title}</a><br/>
                 </div>
             </c:forEach>
-            <a href="${addLinkUrl}${selectedCategoryId}">Add link</a>
+            <a href="${fn:replace(addLinkUrl, 'cat_id', selectedCategoryId)}">Add link</a>
         </c:if>
     </div>
 </div>
